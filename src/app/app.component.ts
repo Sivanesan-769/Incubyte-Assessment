@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, Injectable } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,14 +7,26 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Incubyte-Assessment';
+  str = '';
   result: number = 0;
-
+  calcService = inject(StringCalculatorService);
 
   onSubmit() {
-    console.log(this.title)
+    this.result = this.calcService.add(this.str);
+  }
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class StringCalculatorService {
+  add(numbers: string): number {
+    if (!numbers) return 0;
+    let sum = 0;
+    numbers.split(",").map(x => sum += +x);
+    return sum;
   }
 }
