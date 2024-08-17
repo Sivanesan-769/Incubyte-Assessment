@@ -1,8 +1,6 @@
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width: 1200px;
   width: 100%;
   background-color: #d3bee6;;
   justify-content: center;

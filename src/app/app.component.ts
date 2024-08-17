@@ -1,6 +1,6 @@
 import { Component, inject, Injectable } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, withDebugTracing } from '@angular/router';
 
 @Component({
   selector: 'app-root',
