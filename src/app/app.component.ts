@@ -26,7 +26,12 @@ export class StringCalculatorService {
   add(numbers: string): number {
     if (!numbers) return 0;
     let sum = 0;
-    numbers.split(",").map(x => sum += +x);
+    // Step 3 Allow the add method to handle new lines between numbers (instead of commas). ("1\n2,3" should return 6)
+    numbers = numbers.replace('\n', ',');
+    let numbersArray = numbers.split(/[\n,]+/);
+    const parsedNumbers = numbersArray.map(num => parseInt(num, 10)).filter(num => !isNaN(num));
+    sum = parsedNumbers.reduce((total, num) => total + num, 0);
+    // End Block
     return sum;
   }
 }
