@@ -13,6 +13,7 @@ export class AppComponent {
   str = '';
   result: number = 0;
   calcService = inject(StringCalculatorService);
+  screenHeight = window.innerHeight - 20;
 
   onSubmit() {
     this.result = this.calcService.add(this.str);

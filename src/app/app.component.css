@@ -3,8 +3,28 @@ form {
   flex-direction: column;
   margin: 0 auto;
   max-width: 1200px;
-  width: 25%;
+  width: 100%;
+  background-color: #d3bee6;;
+  justify-content: center;
   input {
-    margin-bottom: 25px;
+    margin: 0 auto;
+    width: 250px;
+    height: 25px;
+  }
+  button {
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 200px;
+    height: 30px;
+    background: #9d3df6;
+    font-weight: 600;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  div > p {
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
   }
 }

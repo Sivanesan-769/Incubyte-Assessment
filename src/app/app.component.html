@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [style.height.px]="screenHeight">
   <input type="text" [(ngModel)]="str" name="str" id="str" required>
   <button type="submit">Submit</button>
   <div>
